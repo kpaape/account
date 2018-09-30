@@ -1,0 +1,21 @@
+@model IEnumerable<Transaction>
+<h3>Welcome, @ViewBag.CurrentUser.first_name @ViewBag.CurrentUser.last_name</h3>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var trans in Model)
+        {
+            <tr>
+                <td>@trans.amount</td>
+                <td>@trans.created_at</td>
+            </tr>
+        }
+    </tbody>
+</table>
